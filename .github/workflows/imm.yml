@@ -7,12 +7,11 @@ on:
         description: '手动触发一次编译'
 
 env:
-  REPO_URL: https://github.com/padavanonly/immortalwrt
+  REPO_URL: https://github.com/immortalwrt/immortalwrt
   REPO_BRANCH: master
   CONFIG_FILE: .config
   DIY_P1_SH: op1.sh
   DIY_P2_SH: op2.sh
-  DIY_P3_SH: op3.sh
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
@@ -53,12 +52,7 @@ jobs:
       
         
     - name: 安装订阅源
-      run: cd openwrt && ./scripts/feeds install -a     
-      
-
-    - name: 下载自动中继脚本
-      run: |
-        $GITHUB_WORKSPACE/$DIY_P3_SH    
+      run: cd openwrt && ./scripts/feeds install -a      
         
     - name: 加载自定义配置
       run: |
