@@ -14,11 +14,11 @@ echo 'src-git xd https://github.com/shiyu1314/openwrt-packages' >>feeds.conf.def
 
 git clone -b master --depth 1 --single-branch https://github.com/jerrykuku/luci-theme-argon package/xd/luci-theme-argon
 
-git_sparse_clone openwrt-23.05 https://github.com/immortalwrt/immortalwrt package/emortal
-git_sparse_clone openwrt-23.05 https://github.com/immortalwrt/immortalwrt package/utils/mhz
-git_sparse_clone openwrt-23.05 https://github.com/immortalwrt/immortalwrt package/network/services/dnsmasq 
-git_sparse_clone openwrt-23.05 https://github.com/immortalwrt/luci modules/luci-base
-git_sparse_clone openwrt-23.05 https://github.com/immortalwrt/luci modules/luci-mod-status
+git_sparse_clone v23.05.2 https://github.com/immortalwrt/immortalwrt package/emortal
+git_sparse_clone v23.05.2 https://github.com/immortalwrt/immortalwrt package/utils/mhz
+git_sparse_clone v23.05.2 https://github.com/immortalwrt/immortalwrt package/network/services/dnsmasq 
+git_sparse_clone v23.05.2 https://github.com/immortalwrt/luci modules/luci-base
+git_sparse_clone v23.05.2 https://github.com/immortalwrt/luci modules/luci-mod-status
 
 ./scripts/feeds update -a
 rm -rf feeds/packages/net/mosdns
