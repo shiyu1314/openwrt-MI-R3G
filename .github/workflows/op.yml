@@ -36,8 +36,7 @@ jobs:
 
     - name: 克隆源代码
       working-directory: /workdir
-      run: |
-        git config advice.detachedHead false
+      run: |       
         df -hT $PWD
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt 
@@ -47,6 +46,7 @@ jobs:
       run: |
         chmod +x $DIY_P1_SH
         cd openwrt
+        git config advice.detachedHead false
         $GITHUB_WORKSPACE/$DIY_P1_SH     
 
     - name: 加载自定义配置
