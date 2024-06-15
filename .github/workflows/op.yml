@@ -4,8 +4,8 @@ on:
   workflow_dispatch:
 
 env:
-  REPO_URL: https://github.com/openwrt/openwrt
-  REPO_BRANCH: v23.05.2
+  REPO_URL: https://github.com/shiyu1314/openwrt
+  REPO_BRANCH: openwrt-23.05.2
   CONFIG_FILE: op.config
   DIY_P1_SH: sh/op.sh
   UPLOAD_FIRMWARE: true
@@ -46,7 +46,6 @@ jobs:
       run: |
         chmod +x $DIY_P1_SH
         cd openwrt
-        git config advice.detachedHead false
         $GITHUB_WORKSPACE/$DIY_P1_SH     
 
     - name: 加载自定义配置
